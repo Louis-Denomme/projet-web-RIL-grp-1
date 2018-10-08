@@ -1,0 +1,1 @@
+var toto = "Premiere ligne du projet";
