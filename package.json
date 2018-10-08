@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Louis-Denomme/projet-web-RIL-grp-1/issues"
   },
-  "homepage": "https://github.com/Louis-Denomme/projet-web-RIL-grp-1#readme"
+  "homepage": "https://github.com/Louis-Denomme/projet-web-RIL-grp-1#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
