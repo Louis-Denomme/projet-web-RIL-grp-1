@@ -1,0 +1,20 @@
+Connexion - Rien à l'affichage
+    Actions sur la page : 
+    - Connexion (test mdp + info user en session) - GET
+Accueil - Rien à l'affichage
+    Actions sur la page :
+    - GET vehiculeS (Seulement si je suis prf.2 + seulement les véhicules de mon agence)
+    - GET agentS (Seulement si je suis prf.1 + seulement les agents de mon agence)
+    - GET agenceS (Seulement si je suis prf.0)
+    - GET voiture (Recherche rapide)
+Depart véhicule - Rien à l'affichage    
+    Actions sur la page :
+    - Depart vehicule - GET vehicule, POST LIEN-CLI-VHL, PUT vehicule
+    - Retour vehicule - PUT LIEN-CLI-VHL (Ajouté un champ bool LCV_ISARCHIVE et le passer à vrai dans ce PUT), PUT véhicule
+- Recherche avancée - Rien à l'affichage
+    Actions sur la page :
+    - En cours d'analyse
+- Fiche VHL - GET véhicule, GET agence, GET photo
+    Actions sur la page :
+    -Demande de rapatriement ( à reflechir)
+    - DELETE vehicule

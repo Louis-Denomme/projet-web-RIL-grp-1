@@ -77,14 +77,39 @@ myRouter.route('/users')
           "methode" : "GET"
       }
       );
+    });
+
+
+        // Je vous rappelle notre route (/users).  
+    myRouter.route('/user/1')
+    // J'implémente les méthodes GET, PUT, UPDATE et DELETE
+    // GET
+    .get(function(req,res){ 
+     res.json(
+        {
+            "demande" : "Liste des utilisateurs",
+            "agent" :
+            {
+                "id" : "1",
+                "nom" : "DENOMME",
+                "prenom" : "Louis",
+                "idAdresse" : "1",
+                "tel" : "03 03 03 03 03",
+                "mobile" : "06 06 06 06 06",
+                "fax" : "03 03 03 03 04",
+                "email" : "louis.denomme@mail.mail",
+                "idProfil" : "0",
+                "idAgence" : "1"            
+            }, methode : req.method
+        });
     })
     //POST
     .post(function(req,res){
-          res.json({message : "Ajoute une nouvelle piscine à la liste", methode : req.method});
+          res.json({message : "Simulation - Utilisateur ajouté", methode : req.method});
     })
     //PUT
     .put(function(req,res){ 
-          res.json({message : "Mise à jour des informations d'une piscine dans la liste", methode : req.method});
+          res.json({message : "Simulation - Utilisateur mis à jour", methode : req.method});
     })
     //DELETE
     .delete(function(req,res){ 
