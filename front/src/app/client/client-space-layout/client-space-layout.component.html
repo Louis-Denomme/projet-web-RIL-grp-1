@@ -1,0 +1,56 @@
+<div class="container border m-4">
+  <div class="row border-bottom">
+    <div class="col-4">
+      <h1>SOCOPEC Entretien</h1>
+    </div>
+    <div class="col-5">
+      <h3>{{agenceVille}}</h3>
+    </div>
+    <div class="col-3 text-right">
+      {{authService.agent.prenom}} {{authService.agent.nom}}<br />
+      <a routerLink="" (click)="logout()"><u>Déconnexion</u></a>
+    </div>
+  </div>
+  <div class="row justify-content-end mt-1">
+    <form (onSubmit)="search()" class="form-inline">
+      <div class="mr-1">Recherche rapide: </div>
+      <div class="input-group">
+        <input type="text" class="form-control" name="search" [(ngModel)]="searchText" placeholder="IMMATRICULATION">
+        <div class="input-group-append pointer" (click)="search()">
+          <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+    <div class="ml-3">
+      <button type="button" class="btn btn-secondary" routerLink="remontee-sav">
+        <i class="fas fa-car mr-1"></i><i class="fas fa-cog" style="font-size:0.7em"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="row border-top">
+    <div class="col-1 p-0 border-right">
+      <div class="menu-item" routerLinkActive="active">
+        <a routerLink="mouvement-vehicule" title="Mouvement vehicule"><i class="fa fa-car"></i></a>
+      </div>
+      <div class="menu-item" routerLinkActive="active">
+        <a routerLink="demande-transfert" title="Demande transfert"><i class="fa fa-car"></i></a>
+      </div>
+      <div class="menu-item" routerLinkActive="active">
+        <a routerLink="liste-agence" title="Liste des agences"><i class="fa fa-home"></i></a>
+      </div>
+    </div>
+    <div class="col-11 p-0">
+      <div class="container-fluid">
+        <div class="row bg-secondary p-2 title">
+          {{layoutService.title}}
+        </div>
+        <div class="row p-2">
+          <div class="container-fluid">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

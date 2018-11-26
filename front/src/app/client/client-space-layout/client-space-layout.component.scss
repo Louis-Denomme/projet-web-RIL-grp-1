@@ -1,0 +1,33 @@
+.title {
+  font-weight: 500;
+  color: white;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+.menu-item {
+  text-align: center;
+
+  i {
+    font-size: 3em;
+  }
+
+  &.active a {
+    color: white;
+  }
+}
+
+.active {
+  background-color: gray;
+}
+
+a {
+  color: black;
+}
