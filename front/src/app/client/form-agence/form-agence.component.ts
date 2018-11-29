@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-form-agence',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAgenceComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(LayoutService) public layoutService: LayoutService,
+  ) { }
 
   ngOnInit() {
+    this.layoutService.title = 'Formulaire d\'agence';
   }
 
 }
