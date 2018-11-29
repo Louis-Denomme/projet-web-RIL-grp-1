@@ -13,11 +13,16 @@
     </thead>
     <tbody>
       <tr *ngFor="let agence of agences">
-        <td>
+        <td class="">
           {{agence.nom}}
         </td>
-        <td>
-          {{agence.nom}}
+        <td class="">
+          <button class="btn btn-success m-1" routerLink="/client/form-agence">
+            <i class="fas fa-cog"></i>
+          </button>
+          <button class="btn btn-danger m-1" routerLink="">
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </td>
       </tr>
     </tbody>

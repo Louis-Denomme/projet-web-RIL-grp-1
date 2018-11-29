@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-recherche',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(LayoutService) public layoutService: LayoutService,
+  ) { }
 
   ngOnInit() {
+    this.layoutService.title = 'Recherche avancée';
   }
 
 }
