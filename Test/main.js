@@ -19,7 +19,6 @@ rad.ajouterThermo(therm1);
 rad.ajouterThermo(therm2);
 
 rad.setTemp(25);
-rad.notifierThermo();
 affTemp();
 
 

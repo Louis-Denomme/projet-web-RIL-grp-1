@@ -22,6 +22,7 @@ class Radiateur {
 
     setTemp(tempRecup) {
         this.temp = tempRecup;
+        this.notifierThermo();
     }
 }
 module.exports = Radiateur;

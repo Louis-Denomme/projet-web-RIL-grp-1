@@ -16,7 +16,7 @@ export class ListeAgenceComponent implements OnInit {
   ngOnInit() {
     this.layoutService.title = 'Liste des agences';
     for (let i = 0; i < 100; i++) {
-      this.agences.push({ nom: 'Agence ' + i });
+      this.agences.push({ nom: 'Agence ' + i, id: i });
     }
   }
 

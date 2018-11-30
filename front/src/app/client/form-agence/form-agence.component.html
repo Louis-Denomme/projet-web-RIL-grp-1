@@ -1,11 +1,20 @@
-<div class="col-md-12 m-0">
+<div class="col-md-12 m-0 d-flex justify-content-between">
   <div class="row justify-content-center d-flex align-items-center">
     <label class="col-md-4 m-3 text-right" for="agence">Agence:</label>
     <input class="col-md-4 h-75" type="text" id="agence">
   </div>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div> 
 </div>
 <p>Add form adresse ici</p>
 <div class="d-flex justify-content-end">
-  <button type="button" class="btn btn-secondary m-3">Annuler</button>
-  <button type="button" class="btn btn-success m-3">Valider</button>
+  <button type="button" class="btn btn-secondary m-3" routerLink="/client/liste-agence">Annuler</button>
+  <button type="button" class="btn btn-success m-3" routerLink="/client/liste-agence">Valider</button>
 </div>
