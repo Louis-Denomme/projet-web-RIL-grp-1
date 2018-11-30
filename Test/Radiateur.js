@@ -2,8 +2,8 @@ var Thermostat = require('./Thermostat.js');
 class Radiateur {
 
     constructor() {
-        this.listeThermo = new Array();
-        this.temp = temp;
+        this.listeThermo = [];
+        this.temp = 0;
     }
 
     ajouterThermo(thermo) {
@@ -12,7 +12,7 @@ class Radiateur {
    
     notifierThermo() {
         for(var i = 0; i < this.listeThermo.length; i++) {
-            listeThermo[i].actualiser(this.temp);
+            this.listeThermo[i].actualiser(this.temp);
         }
     }
 
