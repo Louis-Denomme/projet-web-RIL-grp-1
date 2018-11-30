@@ -1,3 +1,4 @@
+var Thermostat = require('./Thermostat.js');
 class Radiateur {
 
     
