@@ -1,21 +1,15 @@
 var Thermostat = require('./Thermostat.js');
 class Radiateur {
 
-    
-
     constructor() {
         this.listeThermo = new Array();
         this.temp = temp;
     }
 
     ajouterThermo(thermo) {
-        
+        this.listeThermo.push(thermo);
     }
    
-    supprimerThermo() {
-
-    }
-
     notifierThermo() {
         for(var i = 0; i < this.listeThermo.length; i++) {
             listeThermo[i].actualiser(this.temp);
@@ -30,3 +24,4 @@ class Radiateur {
         this.temp = tempRecup;
     }
 }
+module.exports = Radiateur;
