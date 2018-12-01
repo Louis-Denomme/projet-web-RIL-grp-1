@@ -15,5 +15,4 @@ export class FormAgenceComponent implements OnInit {
   ngOnInit() {
     this.layoutService.title = 'Formulaire d\'agence';
   }
-
 }
