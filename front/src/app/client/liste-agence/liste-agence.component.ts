@@ -19,6 +19,4 @@ export class ListeAgenceComponent implements OnInit {
       this.agences.push({ nom: 'Agence ' + i, id: i });
     }
   }
-
-
 }
