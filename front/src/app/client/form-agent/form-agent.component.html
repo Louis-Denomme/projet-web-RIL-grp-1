@@ -1,3 +1,33 @@
-<p>
-  form-agent works!
-</p>
+<div class="col-md-10 m-0">
+  <div class="row justify-content-center d-flex align-items-center">
+    <label class="col-md-1 m-3 text-right" for="agent">Nom</label>
+    <input class="col-md-2 h-75" type="text" id="agent">
+    <label class="col-md-2 m-1 text-right" for="agent">Prénom</label>
+    <input class="col-md-3 h-75" type="text" id="agent">
+    <label class="col-md-4 m-3 text-right" for="agent">Date de naissance</label>
+    <input class="col-md-4 m-3 text-right" type="date" name="Date de naissance">
+    <div class="photos">
+      <label class="photo" for="mon_fichier">Photos Agent (max. 5 Mo) :</label><br />
+          <input type="hidden" name="MAX_FILE_SIZE" value="5048576" />
+          <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+    </div>
+    
+
+
+  </div>
+</div>
+
+<div class="droits">
+  <select name="droit" id="droits">
+    <option value="Directeur">Directeur</option>
+    <option value="Adjoint">Adjoint</option>
+    <option value="Agent">Agent</option>
+</select> 
+</div>
+
+
+
+<div class="d-flex justify-content-end">
+  <button type="button" class="btn btn-secondary m-3">Annuler</button>
+  <button type="button" class="btn btn-success m-3">Enregistrer</button>
+</div>
