@@ -19,7 +19,4 @@ export class ListeVehiculeParcComponent implements OnInit {
       this.vehicules.push({ nom: 'Vehicule ' + i });
     }
   }
-
-  
-
 }
