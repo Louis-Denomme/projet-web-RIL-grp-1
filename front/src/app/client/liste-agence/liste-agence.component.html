@@ -3,28 +3,22 @@
     Créer une agence <i class="fa fa-plus"></i>
   </button>
 </div>
-<div class="row mt-2 p-1">
-  <table class="table table-fixed">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let agence of agences">
-        <td class="">
-          {{agence.nom}}
-        </td>
-        <td class="">
-          <button class="btn btn-success m-1" routerLink="/client/edit-agence/{{agence.id}}">
-            <i class="fas fa-cog"></i>
-          </button>
-          <button class="btn btn-danger m-1" routerLink="">
-            <i class="fas fa-trash-alt"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row mt-2  p-1">
+  <div class="col-md-2">Nom</div>
+  <div class="offset-md-7 col-md-3">Actions</div>
+</div>
+<div class="row mt-2">
+  <div class="container-fluid" style="overflow-y: auto;height: 500px;">
+    <div class="row mt-1 p-1" *ngFor="let agence of agences">
+      <div class="col-md-2">{{agence.nom}}</div>
+      <div class="offset-md-7 col-md-3">
+        <button class="btn btn-success m-1" routerLink="/client/edit-agence/{{agence.id}}">
+          <i class="fas fa-cog"></i>
+        </button>
+        <button class="btn btn-danger m-1" routerLink="">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

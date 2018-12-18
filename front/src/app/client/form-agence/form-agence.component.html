@@ -1,19 +1,36 @@
-<!DOCTYPE html>
-<div class="col-md-12 m-0 d-flex justify-content-between">
-  <div class="row justify-content-center d-flex align-items-center">
-    <label class="col-md-4 m-3 text-right" for="agence">Agence:</label>
-    <input class="col-md-4 h-75" type="text" id="agence">
+<div class="row">
+  <div class="col-md-6">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 ">
+          <label for="agence">Agence</label>
+        </div>
+        <div class="col-md-9">
+        <input class="form-control" type="text" id="agence">
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="agence">Responsable</label>
+        </div>
+        <div class="col-md-9">
+          <select class="form-control">
+            <option>Choisissez votre responsable d'agence</option>
+            <option *ngFor="let agent of agents">{{agent.nom}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="col-md-12 m-0 d-flex">
-  <label class="mr-1">Responsable : </label>
-  <select>
-      <option>Choisissez votre responsable d'agence</option>
-      <option *ngFor="let agent of agents">{{agent.nom}}</option>
-  </select>
-</div>
-<p>Add form adresse ici</p>
-<div class="d-flex justify-content-end">
-  <button type="button" class="btn btn-secondary m-3" routerLink="/client/liste-agence">Annuler</button>
-  <button type="button" class="btn btn-success m-3" routerLink="/client/liste-agence">Valider</button>
+<app-from-address></app-from-address>
+<div class="row mt-2">
+  <div class="col text-right">
+    <button type="button" class="btn btn-secondary" routerLink="/client/liste-agence">Annuler</button>
+    <button type="button" class="btn btn-success ml-2 mr-3" routerLink="/client/liste-agence">Valider</button>
+  </div>
 </div>
