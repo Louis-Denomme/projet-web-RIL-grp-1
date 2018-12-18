@@ -4,20 +4,13 @@
     <label class="col-md-4 m-3 text-right" for="agence">Agence:</label>
     <input class="col-md-4 h-75" type="text" id="agence">
   </div>
-
-
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-      aria-haspopup="true" aria-expanded="false">
-      Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-  </div>
-
+</div>
+<div class="col-md-12 m-0 d-flex">
+  <label class="mr-1">Responsable : </label>
+  <select>
+      <option>Choisissez votre responsable d'agence</option>
+      <option *ngFor="let agent of agents">{{agent.nom}}</option>
+  </select>
 </div>
 <p>Add form adresse ici</p>
 <div class="d-flex justify-content-end">

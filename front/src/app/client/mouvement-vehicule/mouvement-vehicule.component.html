@@ -1,3 +1,44 @@
-<p>
-  mouvement-vehicule works!
-</p>
+<div class="d-flex flex-row text-center border-bottom border-dark p-3">
+  <!-- <div class="col-md-6 border-right border-dark" onclick="">
+    Depart
+  </div>
+  <div class="col-md-6" onclick="">
+    Retour
+  </div> -->
+
+  <div class="col-md-6 border-right border-dark custom-control custom-radio">
+    <input type="radio" id="depart" name="type-mouvement" checked class="m-2"  (change)="radioChange($event)">
+    <label for="depart">Depart</label>
+  </div>
+  <div class="col-md-6 custom-control custom-radio">
+    <input type="radio" id="retour" name="type-mouvement" class="m-2" (change)="radioChange($event)">
+    <label for="retour">Retour</label>
+  </div>
+</div>
+
+<div class="">
+  <div class="row justify-content-center d-flex align-items-center">
+    <label class=" m-3 text-right" for="agence">Immatriculation :</label>
+    <input class="h-75" type="text" id="voiture-immat">
+  </div>
+  <div class="row justify-content-center d-flex align-items-center variable-entree" *ngIf="variableEntree">
+    <label class="m-3 text-right" for="agence">Date de sortie :</label>
+    <input class="h-75" type="text" id="date-retour">
+  </div>
+  <div class="row justify-content-center d-flex align-items-center variable-entree" *ngIf="variableEntree">
+    <label class="m-3 text-right" for="agence">Durée (en jours):</label>
+    <input class="h-75" type="text" id="location-duree">
+  </div>
+  <div class="row justify-content-center d-flex align-items-center variable-entree" *ngIf="variableEntree">
+    <label class="m-3 text-right" for="agence">Nom du client :</label>
+    <input class="h-75" type="text" id="client-name">
+  </div>
+
+  Ajouter dropdown type d'emprunt
+
+</div>
+
+
+<div class="d-flex justify-content-end">
+  <button type="button" class="btn btn-success m-3" routerLink="/client">Valider</button>
+</div>

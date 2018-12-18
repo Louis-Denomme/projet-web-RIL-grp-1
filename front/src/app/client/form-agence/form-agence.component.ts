@@ -6,7 +6,9 @@ import { LayoutService } from '../layout.service';
   templateUrl: './form-agence.component.html',
   styleUrls: ['./form-agence.component.scss']
 })
+
 export class FormAgenceComponent implements OnInit {
+  agents: any[] = [];
 
   constructor(
     @Inject(LayoutService) public layoutService: LayoutService,
@@ -14,5 +16,8 @@ export class FormAgenceComponent implements OnInit {
 
   ngOnInit() {
     this.layoutService.title = 'Formulaire d\'agence';
+    for (let i = 0; i < 10; i++) {
+      this.agents.push({ nom: 'Agent ' + i });
+    }
   }
 }
