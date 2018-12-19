@@ -10,8 +10,8 @@
   <div class="row mt-2">
     <div class="container-fluid" style="overflow-y: auto;height: 500px;">
       <div class="row mt-1 p-1" *ngFor="let vehicule of vehicules">
-          <div id="moncercle"></div><div class="col-md-2">{{vehicule.nom}}</div>
-        <div class="offset-md-7 col-md-3">
+          <div class="col"><div id="moncercle"></div></div><div class="col-md-2">{{vehicule.nom}}</div>
+        <div class="offset-md-6 col-md-3">
           <button class="btn btn-success m-1" routerLink="/client/show-vehicule/{{vehicule.id}}">
             <i class="fas fa-cog"></i>
           </button>
