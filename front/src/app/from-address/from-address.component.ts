@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-from-address',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./from-address.component.sass']
 })
 export class FromAddressComponent implements OnInit {
-
+  @Input() fg: FormGroup;
   constructor() { }
 
   ngOnInit() {

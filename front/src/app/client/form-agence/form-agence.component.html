@@ -1,36 +1,52 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 ">
-          <label for="agence">Agence</label>
-        </div>
-        <div class="col-md-9">
-        <input class="form-control" type="text" id="agence">
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <label for="agence">Responsable</label>
-        </div>
-        <div class="col-md-9">
-          <select class="form-control">
-            <option>Choisissez votre responsable d'agence</option>
-            <option *ngFor="let agent of agents">{{agent.nom}}</option>
-          </select>
+<form [formGroup]="form" (onSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 ">
+            <label for="agence">Agence</label>
+          </div>
+          <div class="col-md-9">
+            <input class="form-control" type="text" id="agence" formControlName="nomAgence">
+          </div>
         </div>
       </div>
     </div>
+    <!-- <div class="col-md-6">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="agence">Responsable</label>
+          </div>
+          <div class="col-md-9">
+            <select class="form-control" formControlName="idResponsable">
+              <option>Choisissez votre responsable d'agence</option>
+              <option *ngFor="let agent of agents">{{agent.nom}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div> -->
   </div>
-</div>
-<app-from-address></app-from-address>
-<div class="row mt-2">
-  <div class="col text-right">
-    <button type="button" class="btn btn-secondary" routerLink="/client/liste-agence">Annuler</button>
-    <button type="button" class="btn btn-success ml-2 mr-3" routerLink="/client/liste-agence">Valider</button>
+  <app-from-address [fg]="form.get('addresse')"></app-from-address>
+  <div class="row mt-2" *ngIf="success">
+    <div class="col">
+      <div class="alert alert-success">
+        {{success}}
+      </div>
+    </div>
   </div>
-</div>
+  <div class="row mt-2" *ngIf="error">
+    <div class="col">
+      <div class="alert alert-error">
+        {{error}}
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col text-right">
+      <button type="button" class="btn btn-secondary" [disabled]="loading" routerLink="/client/liste-agence">Annuler</button>
+      <button type="submit" class="btn btn-success ml-2 mr-3" [disabled]="loading" (click)="onSubmit()">Valider</button>
+    </div>
+  </div>
+</form>

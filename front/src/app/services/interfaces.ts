@@ -1,4 +1,4 @@
-interface Agence {
+class Agence {
     AGC_IDTAGC: number;
     AGC_IDTADR: number;
     AGC_IDTPHO: number;

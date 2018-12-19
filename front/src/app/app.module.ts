@@ -20,7 +20,7 @@ import { FormAgentComponent } from './client/form-agent/form-agent.component';
 import { FormAgenceComponent } from './client/form-agence/form-agence.component';
 import { FromAddressComponent } from './from-address/from-address.component';
 import { RemonteeSAVComponent } from './client/remontee-sav/remontee-sav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowCaracteristiqueVehiculeComponent } from './client/show-caracteristique-vehicule/show-caracteristique-vehicule.component';
 import { ShowHistoriqueVehiculeComponent } from './client/show-historique-vehicule/show-historique-vehicule.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -51,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],

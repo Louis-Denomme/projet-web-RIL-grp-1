@@ -15,7 +15,7 @@
         <button class="btn btn-success m-1" routerLink="/client/edit-agence/{{agence.AGC_IDTAGC}}">
           <i class="fas fa-cog"></i>
         </button>
-        <button class="btn btn-danger m-1" routerLink="">
+        <button class="btn btn-danger m-1" (click)="deleteAgence(agence.AGC_IDTAGC)">
           <i class="fas fa-trash-alt"></i>
         </button>
       </div>

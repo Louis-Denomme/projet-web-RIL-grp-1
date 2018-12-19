@@ -22,6 +22,10 @@ export class ListeAgenceComponent implements OnInit {
       this.agences.push({ nom: 'Agence ' + i, id: i });
     }*/
 
+    this.reload();
+
+  }
+  reload() {
     this.agenceService.getAllAgences().subscribe(
       (data) => {
         this.agences = data;
@@ -30,6 +34,16 @@ export class ListeAgenceComponent implements OnInit {
         console.error(err);
       }
     );
-
+  }
+  deleteAgence(id: number) {
+    this.agenceService.deleteAgence(id).subscribe(
+      (data) => {
+        console.log(data);
+        this.reload();
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
 }
