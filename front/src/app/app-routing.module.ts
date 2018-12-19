@@ -35,7 +35,7 @@ const routes: Routes = [
       { path: 'liste-agent', component: ListeAgentComponent, },
       { path: 'liste-vehicule-parc', component: ListeVehiculeParcComponent, },
       { path: 'recherche', component: RechercheComponent, },
-      { path: 'show-vehicle/:id', component: RemonteeSAVComponent, children:[
+      { path: 'show-vehicule/:id', component: InfoVehiculeComponent, children:[
         { path: '', redirectTo: 'info', pathMatch: 'full'  },
         { path: 'info', component: InfoVehiculeComponent, },
         { path: 'historique', component: HistoVehiculeComponent, },

@@ -1,3 +1,57 @@
-<p>
-  info-vehicule works!
-</p>
+<div class="divdebut" id="titre">
+  <p>Fiche Véhicule 1</p>
+</div>
+
+<div class="divdebut" id="boutonsdroite">
+  <br>
+  <button class="boutonrec btn btn-secondary m-1" type="button" id="refresh" routerLink="/client/show-vehicule/:id/historique"><i class="fas fa-sync-alt"></i></button>
+  <button class="boutonrec btn btn-secondary m-1" type="button" routerLink="/client/demande-transfert"><i class="fas fa-arrow-down"></i></button>
+  <button class="boutonrec btn btn-secondary m-1" type="button" routerLink="client/edit-vehicule/:id"><i class="fas fa-cogs"></i></button>
+  <button class="boutonrec btn btn-secondary m-1" type="button" routerLink="/client"><i class="fas fa-trash-alt"></i></button> <br>
+  <button type="button" class="btn btn-secondary m-1" id="boutonstatut">Modifier le statut</button>
+</div>
+
+<br><br><br>
+ <div id="info">
+  <p>Immatriculation : </p>
+  <input type="text" name="Immat" readonly value="AA-123-AA" id="immat"><br><br>
+  <p class="statut">Statut : </p>
+  <div id="cercle"></div><br>
+  <label>Modele : </label><input type="text" name="Modele" readonly value="Modele A" id="modele"><br><br>
+  <label>Type : </label><input type="text" name="Type" readonly value="Type B" id="type"><br><br>
+ </div>
+     
+ <br>
+ <div class="trait"></div>
+ <br>
+<div id="defilement">    
+ <div class="troisdiv" id="infotech">
+  <p>Informations techniques :</p> <br>
+  <label>Date de mise en circulation : </label><input type="text" name="datemec" readonly value="01/01/2018" ><br><br>
+  <label>Permis necessaire : </label><input type="text" name="permis" readonly value="B"><br><br>
+  <label>Dernier controle technique : </label><input type="text" name="controltech" readonly value="01/01/2018"><br><br>
+ </div>
+     
+ <br>
+ <div class="trait"></div>
+ <br>
+     
+     
+ <div class="troisdiv divmemeniveau" id="dimension">
+  <p>Dimensions :</p> <br>
+  <label>Longueur: </label><input type="text" name="longueur" readonly value="102 cm" ><br><br>
+  <label>Largeur :  </label><input type="text" name="largeur" readonly value="50 cm" ><br><br>
+  <label>Hauteur : </label><input type="text" name="hauteur" readonly value="180 cm" ><br><br>
+  <label>Poids : </label><input type="text" name="poids" readonly value="2 T" ><br><br>
+  <label>Stock :  </label><input type="text" name="stock" readonly value="500 kg" ><br><br>
+ </div>
+     
+     
+  <div class="troisdiv divmemeniveau" id="infomoteur">
+   <p>Information moteur :</p> <br>
+   <label>W :  </label><input type="text" name="W" readonly value="12 chv" ><br><br>
+   <label>KM : </label><input type="text" name="KM" readonly value="10 000 km" ><br><br>
+   <label>Energie : </label><input type="text" name="energie" readonly value="Essence" ><br><br>
+   <label>Classe Eco :  </label><input type="text" name="ce" readonly value="B" ><br><br>
+  </div>  
+</div>

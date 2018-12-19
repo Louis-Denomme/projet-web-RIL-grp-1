@@ -1,0 +1,107 @@
+
+#titre {
+    font-weight: bold;
+    font-size: 25px;
+    float: left; 
+}
+
+#boutonsdroite{
+    float: right; 
+    margin-left: 450px;
+    
+}
+
+.boutonrec {
+    width: 36px;
+    height: 36px;
+    padding : 0px;
+    margin: 0;
+    
+}
+
+
+#boutonstatut {
+    height: 36px;
+    margin-left: 50px;
+}
+
+input {
+    text-align: center;
+
+}
+
+#immat {
+    border: 2px solid black;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+#cercle {
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
+    background: green;
+    margin-left : 73px;
+}
+
+.statut {
+    float:left;
+}
+
+#info label {
+	width: 75px; 
+}
+
+.trait {
+    background-color: black;
+    height: 1pt;
+    width: 100%;
+}
+
+#infotech label{
+    width: 210px; 
+}
+
+.troisdiv p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#dimension label{
+    width: 90px;
+}
+
+#dimension input {
+    width: 90px;
+}
+
+.divmemeniveau {
+    float: left;
+}
+
+#dimension {
+ padding-right: 300px;
+ border: solid;
+ border-left-style: none;
+ border-bottom-style: none;
+ border-top-style: none;
+}
+
+#infomoteur {
+    margin-left: 15px;
+}
+
+#infomoteur label {
+    width: 100px;
+}
+
+#infomoteur input {
+    width: 140px;
+}
+
+#defilement {
+    height: 250px;
+    overflow: auto;
+}
