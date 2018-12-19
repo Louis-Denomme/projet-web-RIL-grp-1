@@ -1,4 +1,3 @@
-
 //L'application requiert l'utilisation du module Express.
 //La variable express nous permettra d'utiliser les fonctionnalités du module Express.  
 var express = require('express');
@@ -16,6 +15,14 @@ var port = 3000;
 
 // Nous créons un objet de type Express. 
 var app = express();
+var cors = require('cors');
+app.use(cors());
+
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 //Afin de faciliter le routage (les URL que nous souhaitons prendre en charge dans notre API), nous créons un objet Router.
 //C'est à partir de cet objet myRouter, que nous allons implémenter les méthodes. 
@@ -26,7 +33,7 @@ var agent = require('./routes/agent.js')(app, version);
 var vehicule = require('./routes/vehicule.js')(app, version);
 var agence = require('./routes/agence.js')(app, version);
 var adresse = require('./routes/adresse.js')(app, version);
-var client = require('./routes/client.js')(app,version);
+var client = require('./routes/client.js')(app, version);
 // var droit = require('./routes/droit.js')(app,version);
 // var historique = require('./routes/historique.js')(app,version);
 // var photo = require('./routes/photo.js')(app,version);

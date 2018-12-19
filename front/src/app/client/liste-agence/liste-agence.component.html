@@ -10,9 +10,9 @@
 <div class="row mt-2">
   <div class="container-fluid" style="overflow-y: auto;height: 500px;">
     <div class="row mt-1 p-1" *ngFor="let agence of agences">
-      <div class="col-md-2">{{agence.nom}}</div>
+      <div class="col-md-2">{{agence.AGC_NOM}}</div>
       <div class="offset-md-7 col-md-3">
-        <button class="btn btn-success m-1" routerLink="/client/edit-agence/{{agence.id}}">
+        <button class="btn btn-success m-1" routerLink="/client/edit-agence/{{agence.AGC_IDTAGC}}">
           <i class="fas fa-cog"></i>
         </button>
         <button class="btn btn-danger m-1" routerLink="">

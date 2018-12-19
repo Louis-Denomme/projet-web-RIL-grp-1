@@ -10,17 +10,19 @@ module.exports = function (app, version) {
         })
 
         .put(version + '/agences', function (req, res) {
-            pool.query('INSERT INTO AGENCE ' +
-                'VALUES(' +
-                '(SELECT MAXID FROM (SELECT MAX(AGC_IDTAGC+1) AS MAXID FROM AGENCE) AS boucle), ' +
-                req.query.AGC_IDTADR + ', ' +
-                (req.query.AGT_IDTPHO== ''? null:req.query.AGT_IDTPHO) + ', ' +
-                '\'' + req.query.AGC_NOM + '\', ' +
-                '\'' + req.query.AGC_TEL + '\', ' +
-                '\'' + req.query.AGC_EMAIL + '\', ' +
-                '\'' + req.query.AGC_FAX + '\', ' +
-                '1 ' +
-                ');', function (error, results, fields) {
+            let sql = 'INSERT INTO AGENCE ' +
+            'VALUES(' +
+            '(SELECT MAXID FROM (SELECT MAX(AGC_IDTAGC+1) AS MAXID FROM AGENCE) AS boucle), ' +
+            req.body.AGC_IDTADR + ', ' +
+            req.body.AGC_IDTPHO + ', ' +
+            '\'' + req.body.AGC_NOM + '\', ' +
+            '\'' + req.body.AGC_TEL + '\', ' +
+            '\'' + req.body.AGC_EMAIL + '\', ' +
+            '\'' + req.body.AGC_FAX + '\', ' +
+            '1 ' +
+            ');';
+            //console.log(req.body,sql);
+            pool.query(sql, function (error, results, fields) {
                     if (error) throw error;
                     res.json({ message: "Agence créée" });
                 });

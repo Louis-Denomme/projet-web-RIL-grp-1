@@ -23,6 +23,7 @@ import { RemonteeSAVComponent } from './client/remontee-sav/remontee-sav.compone
 import { FormsModule } from '@angular/forms';
 import { ShowCaracteristiqueVehiculeComponent } from './client/show-caracteristique-vehicule/show-caracteristique-vehicule.component';
 import { ShowHistoriqueVehiculeComponent } from './client/show-historique-vehicule/show-historique-vehicule.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ShowHistoriqueVehiculeComponent } from './client/show-historique-vehicu
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
