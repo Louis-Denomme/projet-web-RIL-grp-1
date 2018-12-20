@@ -1,4 +1,4 @@
-class Adresse {
+class Addresse {
     ADR_IDTADR: number;
     ADR_NUM: number;
     ADR_COMP: string;
@@ -131,16 +131,16 @@ class Vehicule {
     VHL_VALIDE: boolean;
 }
 
-export { Adresse };
-export { Agence };
-export { Agent };
-export { Client };
-export { Droit };
-export { Historique };
-export { Lien_cli_vhl };
-export { Lien_prf_drt };
-export { Photo };
-export { Profil };
-export { Statut };
-export { Typehisto };
-export { Vehicule };
+export { Addresse, Agence, Agent, Client, Droit, Historique, Lien_cli_vhl, Lien_prf_drt, Photo, Profil, Statut, Typehisto, Vehicule  };
+// export { Agence };
+// export { Agent };
+// export { Client };
+// export { Droit };
+// export { Historique };
+// export { Lien_cli_vhl };
+// export { Lien_prf_drt };
+// export { Photo };
+// export { Profil };
+// export { Statut };
+// export { Typehisto };
+// export { Vehicule };

@@ -21,7 +21,7 @@ module.exports = function (app, version) {
                 '\'' + req.body.AGC_FAX + '\', ' +
                 '1 ' +
                 ');';
-            //console.log(req.body,sql);
+            console.log(req.body,sql);
             pool.query(sql, function (error, results, fields) {
                 if (error) throw error;
                 res.json({

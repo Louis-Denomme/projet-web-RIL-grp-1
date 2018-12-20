@@ -6,7 +6,7 @@
           <label>Adresse</label>
         </div>
         <div class="col-md-9">
-          <input class="form-control" type="text" id="adresse">
+          <input class="form-control" type="text" id="adresse" formControlName="adresse">
         </div>
       </div>
       <div class="row mt-2">
@@ -14,7 +14,7 @@
           <label>Code postal</label>
         </div>
         <div class="col-md-9">
-          <input class="form-control" type="text" id="code-postal">
+          <input class="form-control" type="text" id="code-postal" formControlName="codePostal">
         </div>
       </div>
       <div class="row mt-2">
@@ -22,7 +22,7 @@
           <label>Ville</label>
         </div>
         <div class="col-md-9">
-          <input class="form-control" type="text" id="ville">
+          <input class="form-control" type="text" id="ville" formControlName="ville">
         </div>
       </div>
     </div>
@@ -35,10 +35,10 @@
           <label>Télephone</label>
         </div>
         <div class="col-md-9">
-          <input class="form-control" type="text" id="telephone">
+          <input class="form-control" type="text" id="telephone" formControlName="telephone">
         </div>
       </div>
-      <div class="row mt-2" *ngIf="fg.get('fax')">
+      <div class="row mt-2">
         <div class="col-md-3">
           <label>Fax</label>
         </div>
@@ -51,7 +51,7 @@
           <label>Email</label>
         </div>
         <div class="col-md-9">
-          <input class="form-control" type="text" id="email">
+          <input class="form-control" type="text" id="email" formControlName="email">
         </div>
       </div>
 
