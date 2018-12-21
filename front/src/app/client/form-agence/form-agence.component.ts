@@ -67,34 +67,31 @@ export class FormAgenceComponent implements OnInit {
                 }
               }
             );
-
+            this.addresseService.getAddresse(this.agence.AGC_IDTADR).subscribe(
+              (dataAdr) => {
+                this.addresse = dataAdr;
+                console.log(this.addresse);
+                this.form.patchValue(
+                  {                    
+                    addresse: {
+                      adresse: dataAdr.ADR_COMP,
+                      ville: dataAdr.ADR_VILLE,
+                      codePostal: dataAdr.ADR_CODEPOSTAL,
+                    }
+                  }
+                )
+              },
+              (err) => {
+                console.error(err);
+              }
+            );
           },
           (err) => {
             console.error(err);
           }
         );
-        this.addresseService.getAddresse(this.agence.AGC_IDTADR).subscribe(
-          (dataAdr) => {
-            this.form.patchValue(
-              {
-                addresse: {
-                  adresse: dataAdr.ADR_COMP,
-                  ville: dataAdr.ADR_VILLE,
-                  codePostal: dataAdr.ADR_CODEPOSTAL,
-                }
-              }
-            )
-          },
-          (err) => {
-            console.error(err);
-          }
-        )
       }
     });
-    /*for (let i = 0; i < 10; i++) {
-      this.agents.push({ nom: 'Agent ' + i });
-    }*/
-
   }
 
   onSubmit() {
@@ -103,15 +100,13 @@ export class FormAgenceComponent implements OnInit {
     }
     const value = this.form.value;
 
-    this.agence.AGC_NOM = value.nomAgence == 'undefined' ? null : value.nomAgence;
-    this.agence.AGC_EMAIL = value.email == 'undefined' ? null : value.email;
-    this.agence.AGC_FAX = value.addresse.fax == 'undefined' ? null : value.addresse.fax;// value.addresse.fax;
-    this.agence.AGC_IDTADR = null;
+    this.agence.AGC_NOM = value.nomAgence;
+    this.agence.AGC_EMAIL = value.addresse.email;
+    this.agence.AGC_FAX = value.addresse.fax;// value.addresse.fax;
     this.agence.AGC_IDTPHO = null;
-    this.agence.AGC_TEL = value.telephone == 'undefined' ? null : value.telephone// value.telephone;
+    this.agence.AGC_TEL = value.addresse.telephone// value.telephone;
     this.agence.AGC_VALIDE = true;
 
-    this.addresse.ADR_IDTADR = null;
     this.addresse.ADR_NUM = null;
     this.addresse.ADR_COMP = null;
     this.addresse.ADR_VOIE = null;
@@ -127,7 +122,6 @@ export class FormAgenceComponent implements OnInit {
     if (this.id == null) {
       this.addresseService.getNextId().subscribe(
         (data) => {
-          console.log(data.results[0].MAXID);
           this.addresse.ADR_IDTADR = data.results[0].MAXID;
         }
       )
@@ -153,20 +147,27 @@ export class FormAgenceComponent implements OnInit {
         }
       );
     } else {
-      this.agenceService.updateAgence(this.agence).subscribe(
+      console.log(this.agence);
+      this.addresseService.updateAddresse(this.addresse).subscribe(
         (data) => {
-          this.success = data.message;
-          setTimeout(() => {
-            this.router.navigate(['client', 'liste-agence']);
-          }, 2000);
+          this.agenceService.updateAgence(this.agence).subscribe(
+            (data) => {
+              this.success = data.message;
+              setTimeout(() => {
+                this.router.navigate(['client', 'liste-agence']);
+              }, 2000);
+            },
+            (err) => {
+              this.loading = false;
+              this.error = err;
+              console.error(err);
+            }
+          );
         },
         (err) => {
-          this.loading = false;
-          this.error = err;
           console.error(err);
         }
       );
     }
-
   }
 }

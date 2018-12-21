@@ -43,19 +43,22 @@ module.exports = function (app, version) {
         .get(version + '/adresse/:id', function (req, res) {
             pool.query('SELECT * FROM ADRESSE WHERE ADR_IDTADR = ?', req.params.id, function (error, results, fields) {
                 if (error) throw error;
-                res.json({ results });
+                res.json(results[0]);
             });
         })
 
-        .post(version + '/adresse/:id', function (req, res) {
-            pool.query('UPDATE ADRESSE SET ' +
-                'ADR_NUM = ' + req.query.ADR_NUM
-                + ', ADR_COMP = \'' + req.query.ADR_COMP + '\''
-                + ', ADR_VOIE = \'' + req.query.ADR_VOIE + '\''
-                + ', ADR_CODEPOSTAL = \'' + req.query.ADR_CODEPOSTAL + '\''
-                + ', ADR_VILLE = \'' + req.query.ADR_VILLE + '\''
-                + ', ADR_PAYS = \'' + req.query.ADR_PAYS + '\''
-                + 'WHERE ADR_IDTADR = ?', req.params.id, function (error, results, fields) {
+
+        .post(version + '/adresse', function (req, res) {
+            let sql = 'UPDATE ADRESSE SET ' +
+            'ADR_NUM = ' + req.body.ADR_NUM
+            + ', ADR_COMP = \'' + req.body.ADR_COMP + '\''
+            + ', ADR_VOIE = \'' + req.body.ADR_VOIE + '\''
+            + ', ADR_CODEPOSTAL = \'' + req.body.ADR_CODEPOSTAL + '\''
+            + ', ADR_VILLE = \'' + req.body.ADR_VILLE + '\''
+            + ', ADR_PAYS = \'' + req.query.ADR_PAYS + '\''
+            + 'WHERE ADR_IDTADR = '+req.body.ADR_IDTADR;
+            console.log(sql);
+            pool.query(sql, req.params.id, function (error, results, fields) {
                     if (error) throw error;
                     res.json({ message: 'Adresse modifiée' });
                 });
